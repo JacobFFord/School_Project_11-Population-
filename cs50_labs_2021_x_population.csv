@@ -1,2 +1,33 @@
-slug,github_id,github_username,name,github_url,timestamp,checks_passed,checks_run,style50_score
-cs50/labs/2021/x/population,48466356,JacobFFord,Jacob Ford,https://github.com/me50/JacobFFord/tree/ac6498c9296a4d3ab675a04022b20095c751f6ee,"Sat, 20 Feb 2021 04:01:24PM CST",10,10,1
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    // Prompt for start size
+    int start;
+    do
+    {
+        start = get_int("Start size: ");
+    }
+    while (start < 9);
+    // Prompt for end size
+    int end;
+    do
+    {
+        end = get_int("End size: ");
+    }
+    while (end < start);
+    // Calculate number of years until we reach threshold
+    int counter = 0;
+
+    while (start < end)
+    {
+
+        start = start + (start / 3) - (start / 4);
+        counter++;
+    }
+
+
+    // TODO: Print number of years
+    printf("Years: %i", counter);
+}
